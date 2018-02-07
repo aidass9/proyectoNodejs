@@ -1,0 +1,42 @@
+<h1>EDITAR PARTICIPANTE</h1>
+
+<a href="/" class="btn btn-warning">CREAR</a>
+<br>
+<br> {{#if mensaje}}
+<div class="alert alert-danger">{{mensaje}}</div>
+{{/if}}
+<br>
+
+<form method="POST" action="/editar/{{p.idParticipante}}">
+    <div class="form-group">
+        <label for="numCarrera">Número carrera</label>
+        <input type="number" class="form-control" name="numCarrera" value="{{p.numCarrera}}">
+    </div>
+
+    <div class="form-group">
+        <label for="dorsal">Dorsal</label>
+        <input type="number" class="form-control" name="dorsal" value="{{p.dorsal}}">
+    </div>
+
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" name="nombre" value="{{p.nombre}}">
+    </div>
+
+    <div class="form-group">
+        <label for="apellidos">Apellidos</label>
+        <input type="text" class="form-control" name="apellidos" value="{{p.apellidos}}">
+    </div>
+
+    <div class="form-group">
+        <label for="posicionGeneral">Posicion general</label>
+        <input type="number" class="form-control" name="posicionGeneral" value="{{p.posicionGeneral}}">
+    </div>
+
+    <div class="form-group">
+        <label for="DNI">DNI</label>
+        <input type="text" class="form-control" name="DNI"  value="{{p.DNI}}">
+    </div>
+
+    <input type="submit" value="Editar" class="btn btn-info">
+</form>
