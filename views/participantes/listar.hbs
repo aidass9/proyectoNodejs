@@ -1,1 +1,35 @@
-LISTAR 
+<h1>LISTAR PARTICIPANTES</h1>
+
+<a href="/crear" class="btn btn-warning">CREAR</a><br>
+<br>
+{{#if mensaje}}
+    <div class="alert alert-danger">{{mensaje}}</div>
+{{/if}}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Dorsal</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Posición</th>
+            <th>Tiempo</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each participantes}}
+        <tr>
+            <td scope="row">{{dorsal}}</td>
+            <td>{{nombre}}</td>
+            <td>{{apellidos}}</td>
+            <td>{{posicionGeneral}}</td>
+            <td>{{tiempoOficial}}</td>
+            <td><a href="/editar/{{idParticipante}}" class="btn btn-dark">Editar</a></td>
+            <td><a href="/borrar/{{idParticipante}}" class="btn btn-danger">Borrar</a></td>
+            <td><a href="/detalle/{{idParticipante}}" class="btn btn-secondary">Detalle</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

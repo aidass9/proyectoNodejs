@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS Participantes(
  dorsal INT NOT NULL,
  nombre VARCHAR(50) NOT NULL,
  apellidos varchar(50) NOT NULL,
- posicionGenaral int NOT NULL,
+ posicionGeneral int NOT NULL,
  DNI varchar(50) NOT NULL,
  tiempoOficial varchar(50),
  PRIMARY KEY(idParticipante),
@@ -27,5 +27,5 @@ CREATE TABLE IF NOT EXISTS CodigoChips(
  codigo VARCHAR(16) NOT NULL,
  dorsal INT NOT NULL,
  PRIMARY KEY(codigo),
- CONSTRAINT `FK_chipParticipante` FOREIGN KEY (`dorsal`) REFERENCES `participantes` (`dorsal`)
+ CONSTRAINT `FK_chipParticipante` FOREIGN KEY (`dorsal`) REFERENCES `participantes` (`dorsal`) ON DELETE CASCADE
 );
